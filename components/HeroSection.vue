@@ -1,8 +1,9 @@
-﻿<template>
+<template>
   <section class="relative flex min-h-screen items-center px-4 pt-20 pb-12 sm:px-8 sm:pb-16">
-    <!-- Subtle radial focus behind hero content -->
+    <!-- Ambient sunrise glow behind hero content -->
     <div class="pointer-events-none absolute inset-0 overflow-hidden">
-      <div class="absolute left-1/2 top-1/4 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-whatsapp/[0.015] blur-[100px]" />
+      <div class="absolute left-1/2 top-[45%] h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-whatsapp/[0.04] blur-[120px]" />
+      <div class="absolute left-[55%] top-[40%] h-[400px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-whatsapp/[0.025] blur-[100px]" />
     </div>
 
     <div class="relative mx-auto max-w-6xl">
