@@ -6,7 +6,7 @@
       <Navbar />
       <main>
         <HeroSection />
-        <FeaturesSection />
+        <TrustPoints />
       </main>
       <Footer />
     </div>
@@ -15,3 +15,4 @@
 
 <script setup lang="ts">
 </script>
+
