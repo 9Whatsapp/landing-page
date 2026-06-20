@@ -16,18 +16,16 @@
 
           <div class="mt-8 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
             <a
-              href="https://wa.me/6281234567890"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/login"
               class="inline-flex items-center justify-center gap-1.5 rounded-lg bg-whatsapp px-5 py-2.5 text-sm font-medium text-gray-950 transition-all hover:bg-whatsapp-dark hover:shadow-lg hover:shadow-whatsapp/10 focus-visible:ring-2 focus-visible:ring-whatsapp/50 focus-visible:outline-none"
             >
-              Mulai Sekarang
+              <Icon name="lucide:log-in" class="h-3.5 w-3.5" />              Mulai Sekarang
             </a>
             <a
               href="mailto:hi@9whatsapp.web.id"
               class="inline-flex items-center justify-center gap-1.5 rounded-lg border border-white/[0.06] bg-white/[0.015] px-5 py-2.5 text-sm font-medium text-gray-400 transition-all hover:border-white/[0.1] hover:text-gray-300 focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none"
             >
-              Hubungi Kami
+              <Icon name="lucide:book-open" class="h-3.5 w-3.5" />              Dokumentasi
             </a>
           </div>
         </div>
