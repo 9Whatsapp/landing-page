@@ -6,6 +6,7 @@
       <Navbar />
       <main>
         <HeroSection />
+        <div class="border-t border-white/[0.04]"></div>
         <TrustPoints />
       </main>
       <Footer />
@@ -15,4 +16,5 @@
 
 <script setup lang="ts">
 </script>
+
 
