@@ -1,11 +1,11 @@
 ﻿<template>
-  <section class="px-5 pb-16 sm:px-8 sm:pb-24">
+  <section class="px-4 pb-16 sm:px-8 sm:pb-24">
     <div class="mx-auto max-w-5xl">
       <div class="grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-white/[0.04] bg-white/[0.02] sm:grid-cols-2 lg:grid-cols-4">
         <div
           v-for="point in trustPoints"
           :key="point.title"
-          class="bg-gray-950 p-6"
+          class="bg-gray-950 p-5 sm:p-6"
         >
           <div class="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-whatsapp/[0.06] text-whatsapp">
             <component :is="point.icon" class="h-[18px] w-[18px]" />

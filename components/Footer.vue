@@ -1,6 +1,6 @@
 ﻿<template>
-  <footer class="border-t border-white/[0.04] py-8">
-    <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-5 sm:flex-row sm:px-8">
+  <footer class="border-t border-white/[0.04] py-6 sm:py-8">
+    <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 px-4 sm:flex-row sm:gap-4 sm:px-8">
       <div class="flex items-center gap-3 text-sm">
         <span class="font-medium text-gray-400">9WhatsApp</span>
         <span class="hidden text-gray-700 sm:inline">/</span>
