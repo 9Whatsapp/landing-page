@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       '@tailwindcss/postcss': {},
     },
   },
-  modules: ['@vercel/analytics'],
+  modules: ['@vercel/analytics', '@vercel/speed-insights'],
   app: {
     head: {
       htmlAttrs: {
