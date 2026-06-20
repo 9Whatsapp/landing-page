@@ -1,3 +1,7 @@
 node_modules
 .output
 .nuxt
+.claude/settings.local.json
+.codex
+.impeccable/live/
+.impeccable/critique/

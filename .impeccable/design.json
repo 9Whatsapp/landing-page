@@ -1,0 +1,65 @@
+﻿{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-20T11:50:00Z",
+  "title": "Design System: 9WhatsApp",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "WhatsApp Green", "canonical": "oklch(76% 0.19 150)", "tonalRamp": ["oklch(0.13 0.003 145)", "oklch(0.69 0.19 150)", "oklch(0.76 0.19 150)"] },
+      "bg-deep": { "role": "neutral", "displayName": "Deep Ink", "canonical": "oklch(13% 0.003 145)", "tonalRamp": [] },
+      "ink-secondary": { "role": "neutral", "displayName": "Secondary Ink", "canonical": "#9CA3AF" },
+      "ink-muted": { "role": "neutral", "displayName": "Muted Ink", "canonical": "#6B7280" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines only. One per viewport. Never repeat in a section." },
+      "body": { "displayName": "Body", "purpose": "Subheadlines, section descriptions, prose content." },
+      "label": { "displayName": "Label", "purpose": "Badges, pills, trust strip items, metadata." },
+      "mono": { "displayName": "Mono", "purpose": "Code snippets, API endpoint labels, HTTP status badges." }
+    },
+    "shadows": [
+      { "name": "glow-green", "value": "0 4px 24px rgba(37,211,102,0.1)", "purpose": "Primary CTA hover glow only. Not used for elevation." }
+    ],
+    "motion": [
+      { "name": "ease-fade", "value": "cubic-bezier(0.25, 0.1, 0.25, 1)", "purpose": "Default entrance animation: 0.8s fade-in + translateY." },
+      { "name": "duration-stagger", "value": "100ms", "purpose": "Delay increment between sibling elements in hero." },
+      { "name": "ease-hover", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "State transitions on interactive elements (150-200ms)." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call-to-action. WhatsApp green fill, deep ink text.",
+      "html": "<a href=\"#\" class=\"inline-flex items-center gap-2 rounded-lg bg-whatsapp px-5 py-2.5 text-sm font-medium text-gray-950 transition-all hover:bg-whatsapp-dark hover:shadow-lg hover:shadow-whatsapp/10 focus-visible:ring-2 focus-visible:ring-whatsapp/50 focus-visible:outline-none\">Hubungi Kami</a>",
+      "css": "/* via Tailwind utility classes */"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary action. Subtle surface + border, muted text.",
+      "html": "<a href=\"#\" class=\"inline-flex items-center gap-2 rounded-lg border border-white/[0.08] bg-white/[0.02] px-5 py-2.5 text-sm font-medium text-gray-400 transition-all hover:border-white/[0.12] hover:text-gray-300 focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none\">Email</a>",
+      "css": "/* via Tailwind utility classes */"
+    },
+    {
+      "name": "Code Snippet",
+      "kind": "custom",
+      "refersTo": "code-snippet",
+      "description": "API request preview card. Subdued mono syntax.",
+      "html": "<div class=\"overflow-hidden rounded-lg border border-white/[0.04] bg-white/[0.015] text-left\"><div class=\"flex items-center justify-between border-b border-white/[0.04] px-4 py-2.5\"><span class=\"font-mono text-[11px] font-medium text-gray-500\">POST /api/send</span><span class=\"rounded bg-whatsapp/10 px-1.5 py-0.5 font-mono text-[10px] font-medium text-whatsapp/80\">200</span></div><pre class=\"overflow-x-auto px-4 py-3 text-[13px] leading-[1.7]\"><code class=\"font-mono\">{&NewLine;  \"to\": \"6281234567890\",&NewLine;  \"message\": \"Halo, pesanan #1234 sudah dikirim.\",&NewLine;  \"type\": \"text\"&NewLine;}</code></pre></div>",
+      "css": "/* via Tailwind utility classes */"
+    },
+    {
+      "name": "Coming Soon Badge",
+      "kind": "chip",
+      "refersTo": "nav-badge",
+      "description": "Status indicator in navbar. Green pulsing dot + label.",
+      "html": "<div class=\"flex items-center gap-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] px-3 py-1.5 text-xs text-gray-500\"><span class=\"relative flex h-1.5 w-1.5\"><span class=\"absolute inline-flex h-full w-full animate-ping rounded-full bg-whatsapp/60\"></span><span class=\"relative inline-flex h-1.5 w-1.5 rounded-full bg-whatsapp\"></span></span><span class=\"font-medium\">Coming Soon</span></div>",
+      "css": "/* via Tailwind utility classes */"
+    }
+  ]
+}
