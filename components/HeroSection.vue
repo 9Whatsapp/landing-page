@@ -78,7 +78,7 @@
                 </div>
                 <pre class="overflow-x-auto text-[12px] leading-[1.7] sm:text-[13px]"><code class="font-mono"><span class="text-gray-600">{</span>
   <span class="text-whatsapp/55">"to"</span><span class="text-gray-600">:</span> <span class="text-gray-400">"6281234567890"</span><span class="text-gray-600">,</span>
-  <span class="text-whatsapp/55">"message"</span><span class="text-gray-600">:</span> <span class="text-gray-400">"9980 adalah kode verifikasi Anda."</span><span class="text-gray-600">,</span>
+  <span class="text-whatsapp/55">"message"</span><span class="text-gray-600">:</span> <span class="text-gray-400">"*9980* adalah kode verifikasi Anda."</span><span class="text-gray-600">,</span>
   <span class="text-whatsapp/55">"type"</span><span class="text-gray-600">:</span> <span class="text-gray-400">"text"</span>
 <span class="text-gray-600">}</span></code></pre>
               </div>
