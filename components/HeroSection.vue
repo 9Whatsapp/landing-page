@@ -1,6 +1,6 @@
-﻿<template>
+<template>
   <section class="relative flex min-h-[55vh] items-center justify-center px-4 py-16 sm:px-8 sm:py-28 lg:py-32">
-    <div class="mx-auto w-full max-w-2xl text-center">
+    <div class="mx-auto w-full max-w-3xl text-center">
       <h1
         class="animate-fade-in text-[2rem] font-semibold leading-[1.1] tracking-tight text-white opacity-0 sm:text-5xl lg:text-[3.5rem]"
         style="animation-delay: 0ms"
@@ -64,7 +64,7 @@
           <svg class="h-3 w-3 text-whatsapp/60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
-          Harga Terjangkau
+          Topup Credit
         </span>
         <span class="hidden h-3 w-px bg-gray-700 sm:inline-block" aria-hidden="true"></span>
         <span class="flex items-center gap-1.5 text-gray-400">
@@ -75,9 +75,10 @@
         </span>
       </div>
 
+      <!-- Code Snippet with response -->
       <div
         class="animate-fade-in mx-auto mt-10 w-full max-w-lg overflow-hidden rounded-lg border border-white/[0.04] bg-white/[0.015] text-left opacity-0"
-        style="animation-delay: 400ms"
+        style="animation-delay: 500ms"
       >
         <div class="flex items-center justify-between border-b border-white/[0.04] px-3 py-2.5 sm:px-4">
           <span class="font-mono text-[10px] font-medium text-gray-500 sm:text-[11px]">POST /api/send</span>
