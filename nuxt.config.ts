@@ -14,18 +14,17 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'id',
       },
-      title: '9WhatsApp - Kirim WhatsApp Tanpa Nomor',
+      title: 'WhatsApp API Tanpa Nomor Sendiri & QR Scan | 9WhatsApp',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'API WhatsApp tanpa nomor sendiri dan tanpa QR scan. Kirim OTP, notifikasi, invoice, dan pesan massal otomatis. Daftar gratis dapat credit uji coba. Cocok untuk developer, SaaS, dan bisnis Indonesia.' },
-        { name: 'keywords', content: 'WhatsApp API, kirim WhatsApp tanpa nomor, WhatsApp API tanpa QR, WhatsApp OTP API, kirim pesan WhatsApp otomatis, virtual number WhatsApp, WhatsApp notification API, API WhatsApp Indonesia, 9WhatsApp' },
+        { name: 'description', content: 'Kirim OTP, notifikasi, invoice, dan pesan WhatsApp otomatis lewat API tanpa nomor sendiri dan tanpa QR scan. Cocok untuk developer, SaaS, agency, dan UMKM.' },
         { name: 'author', content: '9WhatsApp' },
         { name: 'theme-color', content: '#25D366' },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: 'https://9whatsapp.web.id/' },
-        { property: 'og:title', content: '9WhatsApp - Kirim WhatsApp Tanpa QR Scan' },
-        { property: 'og:description', content: 'API WhatsApp tanpa nomor sendiri. Kirim OTP, notifikasi, dan pesan massal otomatis. Daftar gratis dapat credit uji coba.' },
+        { property: 'og:title', content: 'WhatsApp API Tanpa Nomor Sendiri & QR Scan' },
+        { property: 'og:description', content: 'Integrasikan WhatsApp OTP API dan notifikasi otomatis tanpa beli nomor, tanpa scan QR, cukup topup credit.' },
         { property: 'og:image', content: 'https://9whatsapp.web.id/og-image.png' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
@@ -33,8 +32,8 @@ export default defineNuxtConfig({
         { property: 'og:site_name', content: '9WhatsApp' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:url', content: 'https://9whatsapp.web.id/' },
-        { name: 'twitter:title', content: '9WhatsApp - Kirim WhatsApp Tanpa QR Scan' },
-        { name: 'twitter:description', content: 'API WhatsApp tanpa nomor sendiri. Kirim OTP, notifikasi, dan pesan massal otomatis. Daftar gratis dapat credit uji coba.' },
+        { name: 'twitter:title', content: 'WhatsApp API Tanpa Nomor Sendiri & QR Scan' },
+        { name: 'twitter:description', content: 'Integrasikan WhatsApp OTP API dan notifikasi otomatis tanpa beli nomor, tanpa scan QR, cukup topup credit.' },
         { name: 'twitter:image', content: 'https://9whatsapp.web.id/og-image.png' },
       ],
       link: [
@@ -63,10 +62,18 @@ export default defineNuxtConfig({
                 '@type': 'WebSite',
                 name: '9WhatsApp',
                 url: 'https://9whatsapp.web.id',
-                potentialAction: {
-                  '@type': 'SearchAction',
-                  target: 'https://9whatsapp.web.id/?q={search_term_string}',
-                  'query-input': 'required name=search_term_string'
+              },
+              {
+                '@type': 'SoftwareApplication',
+                name: '9WhatsApp',
+                applicationCategory: 'BusinessApplication',
+                operatingSystem: 'Web',
+                url: 'https://9whatsapp.web.id',
+                description: 'WhatsApp API tanpa nomor sendiri dan tanpa QR scan untuk mengirim OTP, notifikasi, invoice, dan pesan otomatis.',
+                offers: {
+                  '@type': 'Offer',
+                  priceCurrency: 'IDR',
+                  availability: 'https://schema.org/InStock'
                 }
               },
               {

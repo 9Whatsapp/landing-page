@@ -5,3 +5,4 @@ node_modules
 .codex
 .impeccable/live/
 .impeccable/critique/
+dist

@@ -22,7 +22,7 @@
 
           <!-- Subheadline -->
           <p class="mt-5 max-w-md text-[15px] leading-relaxed text-gray-400 sm:text-base">
-            Cukup satu API call, pesan langsung sampai ke WhatsApp. Tanpa QR scan. Credit gratis untuk uji coba.
+            Lewat API tanpa QR scan untuk OTP, notifikasi, invoice, dan pesan otomatis. Cukup integrasi REST API, topup credit, lalu kirim.
           </p>
 
           <!-- CTA -->
