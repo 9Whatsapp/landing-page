@@ -217,14 +217,16 @@ onMounted(() => {
     scrollContainer.addEventListener('scroll', updateActiveDot, { passive: true })
 
     // Auto-scroll to popular card on mobile
-    if (window.innerWidth < 640) {
-      const popularIndex = plans.findIndex(p => p.popular)
-      if (popularIndex > 0) {
-        const cardWidth = 280 + 16 // min-w + gap
-        scrollContainer.scrollLeft = popularIndex * cardWidth
-        activeDot.value = popularIndex
+    setTimeout(() => {
+      if (window.innerWidth < 640) {
+        const popularIndex = plans.findIndex(p => p.popular)
+        if (popularIndex > 0 && scrollContainer) {
+          const cardWidth = 280 + 16 // min-w + gap
+          scrollContainer.scrollLeft = popularIndex * cardWidth
+          activeDot.value = popularIndex
+        }
       }
-    }
+    }, 100)
   }
 })
 
