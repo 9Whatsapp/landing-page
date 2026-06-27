@@ -35,7 +35,7 @@ export default defineNuxtConfig({
         { name: 'twitter:url', content: 'https://9whatsapp.web.id/' },
         { name: 'twitter:title', content: '9WhatsApp - Kirim WhatsApp Tanpa QR Scan' },
         { name: 'twitter:description', content: 'API WhatsApp tanpa nomor sendiri. Kirim OTP, notifikasi, dan pesan massal otomatis. Daftar gratis dapat credit uji coba.' },
-        { name: 'twitter:image', content: 'https://9whatsapp.web.id/twitter-image.png' },
+        { name: 'twitter:image', content: 'https://9whatsapp.web.id/og-image.png' },
       ],
       link: [
         { rel: 'canonical', href: 'https://9whatsapp.web.id/' },
@@ -49,89 +49,89 @@ export default defineNuxtConfig({
       script: [
         {
           type: 'application/ld+json',
-          innerHTML: JSON.stringify([
-            {
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: '9WhatsApp',
-              url: 'https://9whatsapp.web.id',
-              logo: 'https://9whatsapp.web.id/logo.png',
-              description: 'Platform API WhatsApp untuk mengirim pesan tanpa nomor sendiri.',
-            },
-            {
-              '@context': 'https://schema.org',
-              '@type': 'WebSite',
-              name: '9WhatsApp',
-              url: 'https://9whatsapp.web.id',
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: 'https://9whatsapp.web.id/?q={search_term_string}',
-                'query-input': 'required name=search_term_string'
-              }
-            },
-            {
-              '@context': 'https://schema.org',
-              '@type': 'FAQPage',
-              mainEntity: [
-                {
-                  '@type': 'Question',
-                  name: 'Apakah saya harus punya nomor WhatsApp sendiri?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Tidak. 9WhatsApp menyediakan nomor WhatsApp siap pakai untuk mengirim pesan.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  name: 'Apakah perlu scan QR?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Tidak. Anda cukup topup credit dan menggunakan API yang tersedia.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  name: 'Apa itu credit?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Credit adalah saldo pengiriman. 1 Credit = 1 Pesan WhatsApp.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  name: 'Apakah credit hangus saat masa aktif berakhir?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Tidak. Credit tetap tersimpan. Namun akun yang masa aktifnya berakhir tidak dapat mengirim pesan sampai melakukan topup kembali.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  name: 'Apakah bisa memilih nomor pengirim?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Bisa, tersedia pada paket tertentu untuk kebutuhan branding dan komunikasi yang konsisten.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  name: 'Apakah tersedia API?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Ya. 9WhatsApp menyediakan REST API untuk integrasi dengan aplikasi, CRM, ERP, atau sistem internal Anda.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  name: 'Apakah cocok untuk OTP dan notifikasi?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Ya. 9WhatsApp cocok untuk OTP, notifikasi, reminder, invoice, dan pesan bisnis lainnya.'
-                  }
+          innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'Organization',
+                name: '9WhatsApp',
+                url: 'https://9whatsapp.web.id',
+                logo: 'https://9whatsapp.web.id/logo.png',
+                description: 'Platform API WhatsApp untuk mengirim pesan tanpa nomor sendiri.',
+              },
+              {
+                '@type': 'WebSite',
+                name: '9WhatsApp',
+                url: 'https://9whatsapp.web.id',
+                potentialAction: {
+                  '@type': 'SearchAction',
+                  target: 'https://9whatsapp.web.id/?q={search_term_string}',
+                  'query-input': 'required name=search_term_string'
                 }
-              ]
-            }
-          ])
+              },
+              {
+                '@type': 'FAQPage',
+                mainEntity: [
+                  {
+                    '@type': 'Question',
+                    name: 'Apakah saya harus punya nomor WhatsApp sendiri?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Tidak. 9WhatsApp menyediakan nomor WhatsApp siap pakai untuk mengirim pesan.'
+                    }
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Apakah perlu scan QR?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Tidak. Anda cukup topup credit dan menggunakan API yang tersedia.'
+                    }
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Apa itu credit?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Credit adalah saldo pengiriman. 1 Credit = 1 Pesan WhatsApp.'
+                    }
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Apakah credit hangus saat masa aktif berakhir?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Tidak. Credit tetap tersimpan. Namun akun yang masa aktifnya berakhir tidak dapat mengirim pesan sampai melakukan topup kembali.'
+                    }
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Apakah bisa memilih nomor pengirim?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Bisa, tersedia pada paket tertentu untuk kebutuhan branding dan komunikasi yang konsisten.'
+                    }
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Apakah tersedia API?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Ya. 9WhatsApp menyediakan REST API untuk integrasi dengan aplikasi, CRM, ERP, atau sistem internal Anda.'
+                    }
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Apakah cocok untuk OTP dan notifikasi?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Ya. 9WhatsApp cocok untuk OTP, notifikasi, reminder, invoice, dan pesan bisnis lainnya.'
+                    }
+                  }
+                ]
+              }
+            ]
+          })
         },
       ],
     },
