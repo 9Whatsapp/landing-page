@@ -15,9 +15,9 @@
           </div>
           
           <!-- Card Title -->
-          <h3 class="text-[15px] font-semibold text-white transition-colors duration-300 group-hover:text-whatsapp">
+          <h2 class="text-[15px] font-semibold text-white transition-colors duration-300 group-hover:text-whatsapp">
             {{ point.title }}
-          </h3>
+          </h2>
           
           <!-- Card Description -->
           <p class="mt-2 text-[13px] leading-relaxed text-gray-400 transition-colors duration-300 group-hover:text-gray-300">

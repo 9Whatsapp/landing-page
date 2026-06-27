@@ -11,7 +11,7 @@
     <div class="relative mx-auto max-w-6xl w-full">
       <div class="grid items-center gap-10 sm:gap-12 lg:grid-cols-12 lg:gap-8">
         <!-- Left: Copy (spans 7 cols on large screens) -->
-        <div class="opacity-0 animate-fade-in-up lg:col-span-7 pr-0 lg:pr-4">
+        <div class="lg:col-span-7 pr-0 lg:pr-4">
           <!-- Headline -->
           <h1 class="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
             Kirim WhatsApp<br />
