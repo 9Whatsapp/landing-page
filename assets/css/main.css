@@ -5,6 +5,10 @@
   --color-whatsapp-dark: #1ebe5c;
 
   --animate-fade-in: fade-in 0.8s ease-out forwards;
+  --animate-fade-in-up: hero-fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in-up-delayed: hero-fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  --animate-float-panel: hero-float 6s ease-in-out infinite;
+  --animate-glow-pulse: hero-glow-pulse 4s ease-in-out infinite;
   --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
   --animate-flow-dot: flow-dot 2.4s ease-in-out infinite;
   --animate-flow-dot-v: flow-dot-v 2.4s ease-in-out infinite;
@@ -22,6 +26,37 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes hero-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes hero-glow-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.08);
   }
 }
 
@@ -77,10 +112,135 @@
   }
 }
 
+/* Hero typing animation */
+.hero-code-line {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.hero-code-line.typing {
+  animation: hero-code-type 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: #25D366;
+  margin-left: 1px;
+  vertical-align: text-bottom;
+  animation: hero-cursor-blink 0.7s step-end infinite;
+}
+
+@keyframes hero-code-type {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Hero delivery animation */
+.hero-delivery-dot {
+  opacity: 0;
+}
+
+.hero-delivery-dot.visible {
+  animation: hero-delivery-in 0.5s ease-out forwards;
+}
+
+.hero-delivery-text {
+  opacity: 0;
+}
+
+.hero-delivery-text.visible {
+  animation: hero-delivery-in 0.5s ease-out forwards;
+}
+
+.hero-delivery-time {
+  opacity: 0;
+}
+
+.hero-delivery-time.visible {
+  animation: hero-delivery-in 0.5s ease-out 0.2s forwards;
+}
+
+@keyframes hero-delivery-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero glow effect */
+.hero-glow-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  border: 1px solid rgba(37, 211, 102, 0.04);
+  opacity: 0;
+  animation: hero-glow-ring-in 2s ease-out 0.5s forwards;
+}
+
+.hero-glow-ring-delayed {
+  width: 140%;
+  height: 140%;
+  border-color: rgba(37, 211, 102, 0.02);
+  animation-delay: 0.8s;
+}
+
+@keyframes hero-glow-ring-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Hero trust badge pulse */
+.hero-trust-dot {
+  position: relative;
+}
+
+.hero-trust-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid rgba(37, 211, 102, 0.15);
+  animation: hero-trust-ring 3s ease-in-out infinite;
+}
+
+@keyframes hero-trust-ring {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-moothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3 {
@@ -111,10 +271,20 @@ h1, h2, h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-fade-in {
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-fade-in-up-delayed {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .animate-float-panel {
+    animation: none !important;
+  }
+
+  .animate-glow-pulse {
+    animation: none !important;
   }
 
   .animate-ping {
@@ -136,5 +306,29 @@ h1, h2, h3 {
   .animate-status-pulse {
     animation: none;
   }
-}
 
+  .hero-typing-cursor {
+    animation: none;
+    opacity: 1;
+  }
+
+  .hero-code-line {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-delivery-dot,
+  .hero-delivery-text,
+  .hero-delivery-time {
+    opacity: 1;
+  }
+
+  .hero-glow-ring {
+    animation: none;
+    opacity: 1;
+  }
+
+  .hero-trust-dot::after {
+    animation: none;
+  }
+}

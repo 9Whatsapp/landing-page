@@ -1,17 +1,20 @@
-<template>
+﻿<template>
   <section class="px-4 pb-16 sm:px-8 sm:pb-24">
     <div class="mx-auto max-w-5xl">
       <div class="grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.03] shadow-[0_0_40px_-12px_rgba(37,211,102,0.04)] sm:grid-cols-2 lg:grid-cols-4">
         <div
           v-for="point in trustPoints"
           :key="point.title"
-          class="bg-gray-950/90 p-5 transition-colors hover:bg-gray-950/70 sm:p-6"
+          class="group relative bg-gray-950/90 p-5 transition-colors hover:bg-gray-950/70 sm:p-6"
         >
-          <div class="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-whatsapp/[0.06] text-whatsapp">
+          <div class="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-whatsapp/[0.06] text-whatsapp transition-colors group-hover:bg-whatsapp/[0.1]">
             <component :is="point.icon" class="h-[18px] w-[18px]" />
           </div>
           <h3 class="text-sm font-medium text-white">{{ point.title }}</h3>
           <p class="mt-1.5 text-[13px] leading-relaxed text-gray-500">{{ point.description }}</p>
+          <span v-if="point.metric" class="mt-3 inline-block rounded-md bg-whatsapp/[0.05] px-2 py-0.5 font-mono text-[11px] font-medium text-whatsapp/50">
+            {{ point.metric }}
+          </span>
         </div>
       </div>
     </div>
@@ -23,8 +26,9 @@ import { h } from "vue"
 
 const trustPoints = [
   {
-    title: "Nomor Disediakan",
-    description: "Nomor virtual dari kami. Tidak perlu beli, registrasi, atau kelola WhatsApp sendiri.",
+    title: "Nomor Siap Pakai",
+    description: "Nomor virtual dari kami. Tanpa beli, tanpa registrasi, langsung kirim.",
+    metric: null,
     icon: () =>
       h(
         "svg",
@@ -40,7 +44,8 @@ const trustPoints = [
   },
   {
     title: "Tanpa QR Scan",
-    description: "Tidak perlu scan QR atau link device. Langsung integrasi dan kirim.",
+    description: "Tidak perlu scan QR atau link device. Integrasikan API, langsung jalan.",
+    metric: null,
     icon: () =>
       h(
         "svg",
@@ -55,8 +60,9 @@ const trustPoints = [
       ),
   },
   {
-    title: "REST API",
-    description: "Endpoint sederhana dengan dokumentasi lengkap. Integrasi dalam hitungan menit.",
+    title: "REST API Sederhana",
+    description: "Satu endpoint, satu JSON body. Dokumentasi lengkap, contoh code siap pakai.",
+    metric: "~120ms",
     icon: () =>
       h(
         "svg",
@@ -71,8 +77,9 @@ const trustPoints = [
       ),
   },
   {
-    title: "Pay-as-you-go",
-    description: "Topup credit sesuai kebutuhan. Tanpa langganan bulanan, tanpa komitmen.",
+    title: "Bayar Sesuai Pakai",
+    description: "Topup credit sesuai kebutuhan. Tanpa langganan, tanpa komitmen.",
+    metric: null,
     icon: () =>
       h(
         "svg",

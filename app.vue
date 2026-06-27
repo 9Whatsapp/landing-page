@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="relative min-h-screen bg-gray-950">
     <div class="network-bg pointer-events-none fixed inset-0"></div>
 
@@ -8,11 +8,11 @@
         <HeroSection />
         <div class="border-t border-white/[0.04]"></div>
         <TrustPoints />
-        <AboutSection />
-        <HowItWorks />
-        <PricingSection />
+        <AboutSection id="fitur" />
+        <HowItWorks id="cara-kerja" />
+        <PricingSection id="harga" />
         <StatsSection />
-        <FAQSection />
+        <FAQSection id="faq" />
         <FinalCTA />
       </main>
       <Footer />

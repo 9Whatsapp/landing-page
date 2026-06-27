@@ -10,12 +10,29 @@
           </span>
           <span class="text-[15px] font-semibold tracking-tight text-white">9WhatsApp</span>
         </a>
-        <div class="flex items-center gap-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] px-3 py-1.5 text-xs text-gray-500">
-          <span class="relative flex h-1.5 w-1.5" aria-hidden="true">
-            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-whatsapp/60"></span>
-            <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-whatsapp"></span>
-          </span>
-          <span class="font-medium">Coming Soon</span>
+
+        <!-- Desktop nav links -->
+        <div class="hidden items-center gap-6 md:flex">
+          <a v-for="link in navLinks" :key="link.href" :href="link.href"
+            class="text-[13px] text-gray-500 transition-colors hover:text-gray-300">
+            {{ link.label }}
+          </a>
+        </div>
+
+        <div class="flex items-center gap-2.5">
+          <div class="hidden items-center gap-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] px-3 py-1.5 text-xs text-gray-500 sm:flex">
+            <span class="relative flex h-1.5 w-1.5" aria-hidden="true">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-whatsapp/60"></span>
+              <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-whatsapp"></span>
+            </span>
+            <span class="font-medium">Coming Soon</span>
+          </div>
+          <a
+            href="/login"
+            class="inline-flex items-center gap-1.5 rounded-lg bg-whatsapp px-3.5 py-1.5 text-xs font-medium text-gray-950 transition-all hover:bg-whatsapp-dark hover:shadow-[0_2px_16px_rgba(37,211,102,0.15)] focus-visible:ring-2 focus-visible:ring-whatsapp/50 focus-visible:outline-none"
+          >
+            Coba Gratis
+          </a>
         </div>
       </div>
     </div>
@@ -23,5 +40,10 @@
 </template>
 
 <script setup lang="ts">
+const navLinks = [
+  { label: 'Fitur', href: '#fitur' },
+  { label: 'Cara Kerja', href: '#cara-kerja' },
+  { label: 'Harga', href: '#harga' },
+  { label: 'FAQ', href: '#faq' },
+]
 </script>
-
