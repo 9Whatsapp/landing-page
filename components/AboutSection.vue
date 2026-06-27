@@ -1,38 +1,39 @@
-﻿<template>
+<template>
   <section class="border-t border-white/[0.04] py-16 sm:py-20">
     <div class="mx-auto max-w-5xl px-4 sm:px-8">
       <div class="grid gap-10 lg:grid-cols-2 lg:gap-16">
         <div ref="leftEl" class="scroll-reveal">
-          <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+          <h2 class="text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl">
             Kirim pesan WhatsApp.<br />
-            <span class="text-gray-500">Bukan urus nomor.</span>
+            <span class="bg-gradient-to-r from-whatsapp to-emerald-400 bg-clip-text text-transparent">Bukan urus nomor.</span>
           </h2>
-          <p class="mt-4 text-sm leading-relaxed text-gray-500 sm:text-[15px]">
+          <p class="mt-4 text-sm leading-relaxed text-gray-400 sm:text-[15px]">
             9WhatsApp sediakan nomor virtual siap pakai. Tanpa beli, tanpa registrasi, tanpa QR scan. Fokus ke bisnis Anda.
           </p>
         </div>
         <div ref="rightEl" class="scroll-reveal" data-delay="200">
-          <div class="space-y-px overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.03]">
+          <div class="overflow-hidden rounded-2xl border border-white/[0.08] bg-[#090e0c]/90 shadow-[0_0_50px_-12px_rgba(37,211,102,0.02)]">
             <div
-              v-for="item in items"
+              v-for="(item, index) in items"
               :key="item.problem"
-              class="bg-gray-950/90 p-4 sm:p-5"
+              class="group relative p-4 sm:p-5 transition-colors duration-300 hover:bg-[#0c1411]/90"
+              :class="index > 0 ? 'border-t border-white/[0.06]' : ''"
             >
               <div class="flex items-start gap-3">
-                <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/[0.04]">
-                  <svg class="h-3 w-3 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-white/[0.06] bg-white/[0.02] text-gray-500 transition-colors duration-300 group-hover:text-gray-400">
+                  <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" />
                   </svg>
                 </div>
-                <p class="text-sm leading-relaxed text-gray-500">{{ item.problem }}</p>
+                <p class="text-sm leading-relaxed text-gray-400 transition-colors duration-300 group-hover:text-gray-300">{{ item.problem }}</p>
               </div>
               <div class="flex items-start gap-3 mt-2.5 ml-0 pl-8">
-                <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-whatsapp/[0.08]">
-                  <svg class="h-3 w-3 text-whatsapp" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-whatsapp/15 bg-whatsapp/5 text-whatsapp transition-all duration-300 group-hover:border-whatsapp/30 group-hover:bg-whatsapp/10">
+                  <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
                 </div>
-                <p class="text-sm font-medium leading-relaxed text-gray-300">{{ item.solution }}</p>
+                <p class="text-sm font-medium leading-relaxed text-gray-300 transition-colors duration-300 group-hover:text-white">{{ item.solution }}</p>
               </div>
             </div>
           </div>

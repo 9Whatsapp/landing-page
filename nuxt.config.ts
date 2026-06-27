@@ -1,4 +1,4 @@
-﻿// https://nuxt.com/docs/api/configuration/nuxt-config
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   },
   modules: ['@vercel/analytics', '@vercel/speed-insights'],
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       htmlAttrs: {
         lang: 'id',

@@ -3,16 +3,17 @@
     <div class="mx-auto max-w-5xl px-4 py-10 sm:px-8 sm:py-12">
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
         <div class="lg:col-span-2">
-          <div class="flex items-center gap-2">
-            <span class="text-sm font-semibold text-white">9WhatsApp</span>
-          </div>
-          <p class="mt-2 text-[13px] text-gray-500">Kirim WhatsApp Tanpa Nomor</p>
-          <div class="mt-4 flex items-center gap-3">
+          <NuxtLink to="/" class="inline-flex items-center gap-2 rounded-md focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">
+            <img src="/logo.png" alt="9WhatsApp Logo" class="h-6 w-6 object-contain rounded" />
+            <span class="text-[15px] font-semibold tracking-tight text-white">9WhatsApp</span>
+          </NuxtLink>
+          <p class="mt-2.5 text-[13px] text-gray-400">Kirim WhatsApp Tanpa Nomor</p>
+          <div class="mt-4 flex items-center gap-3.5">
             <a
               href="https://wa.me/6281234567890"
               target="_blank"
               rel="noopener noreferrer"
-              class="rounded-sm text-gray-500 transition-colors hover:text-whatsapp focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none"
+              class="rounded-sm text-gray-500 transition-colors duration-200 hover:text-whatsapp focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none"
               aria-label="WhatsApp"
             >
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -21,7 +22,7 @@
             </a>
             <a
               href="mailto:hi@9whatsapp.web.id"
-              class="rounded-sm text-gray-500 transition-colors hover:text-gray-400 focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none"
+              class="rounded-sm text-gray-500 transition-colors duration-200 hover:text-white focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none"
               aria-label="Email"
             >
               <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
@@ -32,7 +33,7 @@
               href="https://t.me/ninewhatsapp"
               target="_blank"
               rel="noopener noreferrer"
-              class="rounded-sm text-gray-500 transition-colors hover:text-gray-400 focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none"
+              class="rounded-sm text-gray-500 transition-colors duration-200 hover:text-white focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none"
               aria-label="Telegram"
             >
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -43,35 +44,37 @@
         </div>
 
         <div>
-          <h3 class="text-xs font-medium text-gray-400">Product</h3>
-          <ul class="mt-3 space-y-2">
-            <li><a href="#features" class="text-[13px] text-gray-500 transition-colors hover:text-gray-400 focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Fitur</a></li>
-            <li><a href="#pricing" class="text-[13px] text-gray-500 transition-colors hover:text-gray-400 focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Harga</a></li>
-            <li><a href="https://9whatsapp.web.id/docs" class="text-[13px] text-gray-500 transition-colors hover:text-gray-400 focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Dokumentasi API</a></li>
+          <h3 class="text-[11px] font-bold text-white tracking-wider uppercase">Product</h3>
+          <ul class="mt-3.5 space-y-2">
+            <li><NuxtLink to="/#fitur" class="text-[13px] text-gray-400 transition-colors duration-200 hover:text-white focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Fitur</NuxtLink></li>
+            <li><NuxtLink to="/#cara-kerja" class="text-[13px] text-gray-400 transition-colors duration-200 hover:text-white focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Cara Kerja</NuxtLink></li>
+            <li><NuxtLink to="/#harga" class="text-[13px] text-gray-400 transition-colors duration-200 hover:text-white focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Harga</NuxtLink></li>
+            <li><a href="https://docs.9whatsapp.web.id" target="_blank" rel="noopener" class="text-[13px] text-gray-400 transition-colors duration-200 hover:text-white focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Dokumentasi API</a></li>
           </ul>
         </div>
 
         <div>
-          <h3 class="text-xs font-medium text-gray-400">Company</h3>
-          <ul class="mt-3 space-y-2">
-            <li><a href="#about" class="text-[13px] text-gray-500 transition-colors hover:text-gray-400 focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Tentang Kami</a></li>
-            <li><a href="/privacy" class="text-[13px] text-gray-500 transition-colors hover:text-gray-400 focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Privacy Policy</a></li>
-            <li><a href="/terms" class="text-[13px] text-gray-500 transition-colors hover:text-gray-400 focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Terms</a></li>
+          <h3 class="text-[11px] font-bold text-white tracking-wider uppercase">Company</h3>
+          <ul class="mt-3.5 space-y-2">
+            <li><NuxtLink to="/about" class="text-[13px] text-gray-400 transition-colors duration-200 hover:text-white focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Tentang Kami</NuxtLink></li>
+            <li><NuxtLink to="/privacy" class="text-[13px] text-gray-400 transition-colors duration-200 hover:text-white focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Privacy Policy</NuxtLink></li>
+            <li><NuxtLink to="/terms" class="text-[13px] text-gray-400 transition-colors duration-200 hover:text-white focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Terms</NuxtLink></li>
           </ul>
         </div>
 
         <div>
-          <h3 class="text-xs font-medium text-gray-400">Support</h3>
-          <ul class="mt-3 space-y-2">
-            <li><a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="text-[13px] text-gray-500 transition-colors hover:text-gray-400 focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">WhatsApp</a></li>
-            <li><a href="mailto:hi@9whatsapp.web.id" class="text-[13px] text-gray-500 transition-colors hover:text-gray-400 focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Email</a></li>
-            <li><a href="https://t.me/ninewhatsapp" target="_blank" rel="noopener noreferrer" class="text-[13px] text-gray-500 transition-colors hover:text-gray-400 focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Telegram</a></li>
+          <h3 class="text-[11px] font-bold text-white tracking-wider uppercase">Support</h3>
+          <ul class="mt-3.5 space-y-2">
+            <li><NuxtLink to="/contact" class="text-[13px] text-whatsapp font-semibold transition-colors duration-200 hover:text-white focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Form Bantuan</NuxtLink></li>
+            <li><a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="text-[13px] text-gray-400 transition-colors duration-200 hover:text-white focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">WhatsApp Support</a></li>
+            <li><a href="mailto:hi@9whatsapp.web.id" class="text-[13px] text-gray-400 transition-colors duration-200 hover:text-white focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Email Support</a></li>
+            <li><a href="https://t.me/ninewhatsapp" target="_blank" rel="noopener noreferrer" class="text-[13px] text-gray-400 transition-colors duration-200 hover:text-white focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:outline-none">Telegram Group</a></li>
           </ul>
         </div>
       </div>
 
       <div class="mt-10 border-t border-white/[0.04] pt-6">
-        <p class="text-center text-xs text-gray-600">&copy; {{ new Date().getFullYear() }} 9WhatsApp. All rights reserved.</p>
+        <p class="text-center text-xs text-gray-500">&copy; {{ new Date().getFullYear() }} 9WhatsApp. All rights reserved.</p>
       </div>
     </div>
   </footer>

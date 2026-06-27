@@ -1,4 +1,4 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 
 @theme {
   --color-whatsapp: #25D366;
@@ -331,4 +331,15 @@ h1, h2, h3 {
   .hero-trust-dot::after {
     animation: none;
   }
+}
+
+/* Page Transitions */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s ease-out;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(4px);
 }

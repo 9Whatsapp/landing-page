@@ -1,11 +1,11 @@
-﻿<template>
+<template>
   <section class="border-t border-white/[0.04] py-16 sm:py-20">
     <div class="mx-auto max-w-5xl px-4 sm:px-8">
       <div ref="headerEl" class="scroll-reveal text-center">
         <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
           4 Langkah, Langsung Jalan
         </h2>
-        <p class="mt-3 text-sm text-gray-500 sm:text-[15px]">
+        <p class="mt-3 text-sm text-gray-400 sm:text-[15px]">
           Topup, integrasi, kirim. Selesai dalam hitungan menit.
         </p>
       </div>
@@ -16,24 +16,28 @@
             v-for="(step, index) in steps"
             :key="step.title"
             :ref="(el) => registerStep(el as HTMLElement, index)"
-            class="scroll-reveal relative flex flex-col items-center text-center lg:items-start lg:text-left"
+            class="scroll-reveal group relative flex flex-col items-center text-center lg:items-start lg:text-left"
             :data-delay="index * 100"
           >
             <!-- Step indicator + connector -->
-            <div class="relative mb-5 flex items-center lg:mb-6">
-              <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-whatsapp/15 bg-whatsapp/[0.06] font-mono text-sm font-medium text-whatsapp">
+            <div class="relative w-full mb-5 flex items-center justify-center lg:justify-start lg:mb-6">
+              <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-whatsapp/15 bg-whatsapp/5 font-mono text-[13px] font-semibold text-whatsapp transition-all duration-300 shadow-[0_0_15px_rgba(37,211,102,0.01)] group-hover:border-whatsapp/30 group-hover:bg-whatsapp/10">
                 {{ index + 1 }}
               </div>
               <div
                 v-if="index < steps.length - 1"
-                class="ml-3 hidden h-px w-16 bg-gradient-to-r from-whatsapp/10 to-transparent lg:block"
+                class="absolute left-[44px] top-[18px] w-[calc(100%-60px)] hidden h-px bg-gradient-to-r from-whatsapp/20 to-transparent lg:block transition-all duration-300 group-hover:from-whatsapp/40"
                 aria-hidden="true"
               />
             </div>
 
-            <h3 class="text-sm font-medium text-white">{{ step.title }}</h3>
-            <p class="mt-1.5 text-[13px] leading-relaxed text-gray-500">{{ step.description }}</p>
-            <span v-if="step.metric" class="mt-2.5 inline-block rounded-md bg-whatsapp/[0.05] px-2 py-0.5 font-mono text-[11px] font-medium text-whatsapp/50">
+            <h3 class="text-[15px] font-semibold text-white transition-colors duration-300 group-hover:text-whatsapp">
+              {{ step.title }}
+            </h3>
+            <p class="mt-2.5 text-[13px] leading-relaxed text-gray-400 transition-colors duration-300 group-hover:text-gray-300">
+              {{ step.description }}
+            </p>
+            <span v-if="step.metric" class="mt-3.5 inline-flex items-center rounded-full border border-whatsapp/10 bg-whatsapp/5 px-2.5 py-0.5 font-mono text-[10px] font-semibold text-whatsapp transition-colors duration-300 group-hover:border-whatsapp/20 group-hover:bg-whatsapp/8">
               {{ step.metric }}
             </span>
           </div>

@@ -1,18 +1,35 @@
-﻿<template>
+<template>
   <section class="px-4 pb-16 sm:px-8 sm:pb-24">
     <div class="mx-auto max-w-5xl">
-      <div class="grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.03] shadow-[0_0_40px_-12px_rgba(37,211,102,0.04)] sm:grid-cols-2 lg:grid-cols-4">
+      <div class="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.02] shadow-[0_0_50px_-12px_rgba(37,211,102,0.03)] sm:grid-cols-2 lg:grid-cols-4">
         <div
-          v-for="point in trustPoints"
+          v-for="(point, index) in trustPoints"
           :key="point.title"
-          class="group relative bg-gray-950/90 p-5 transition-colors hover:bg-gray-950/70 sm:p-6"
+          :ref="(el) => registerCard(el as HTMLElement, index)"
+          class="scroll-reveal group relative bg-[#090e0c]/95 p-6 transition-colors duration-300 hover:bg-[#0c1411]/95"
+          :data-delay="index * 100"
         >
-          <div class="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-whatsapp/[0.06] text-whatsapp transition-colors group-hover:bg-whatsapp/[0.1]">
-            <component :is="point.icon" class="h-[18px] w-[18px]" />
+          <!-- Icon Container with subtle border/bg change -->
+          <div class="mb-5 flex h-10 w-10 items-center justify-center rounded-xl border border-whatsapp/15 bg-whatsapp/5 text-whatsapp transition-all duration-300 group-hover:border-whatsapp/30 group-hover:bg-whatsapp/10">
+            <component :is="point.icon" class="h-5 w-5" />
           </div>
-          <h3 class="text-sm font-medium text-white">{{ point.title }}</h3>
-          <p class="mt-1.5 text-[13px] leading-relaxed text-gray-500">{{ point.description }}</p>
-          <span v-if="point.metric" class="mt-3 inline-block rounded-md bg-whatsapp/[0.05] px-2 py-0.5 font-mono text-[11px] font-medium text-whatsapp/50">
+          
+          <!-- Card Title -->
+          <h3 class="text-[15px] font-semibold text-white transition-colors duration-300 group-hover:text-whatsapp">
+            {{ point.title }}
+          </h3>
+          
+          <!-- Card Description -->
+          <p class="mt-2 text-[13px] leading-relaxed text-gray-400 transition-colors duration-300 group-hover:text-gray-300">
+            {{ point.description }}
+          </p>
+          
+          <!-- Metric Badge with standard pulsing indicator -->
+          <span v-if="point.metric" class="mt-4 inline-flex items-center gap-1.5 rounded-full border border-whatsapp/15 bg-whatsapp/8 px-2.5 py-0.5 font-mono text-[10px] font-semibold text-whatsapp">
+            <span class="relative flex h-1.5 w-1.5">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-whatsapp/60 opacity-75"></span>
+              <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-whatsapp"></span>
+            </span>
             {{ point.metric }}
           </span>
         </div>
@@ -22,7 +39,35 @@
 </template>
 
 <script setup lang="ts">
-import { h } from "vue"
+import { h, onMounted, onUnmounted, ref } from "vue"
+
+const cardEls = ref<HTMLElement[]>([])
+let observer: IntersectionObserver | null = null
+
+function registerCard(el: HTMLElement | null, index: number) {
+  if (el) cardEls.value[index] = el
+}
+
+onMounted(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    cardEls.value.forEach(el => el?.classList.add('revealed'))
+    return
+  }
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed')
+          observer?.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+  )
+  cardEls.value.forEach(el => { if (el) observer?.observe(el) })
+})
+
+onUnmounted(() => observer?.disconnect())
 
 const trustPoints = [
   {
