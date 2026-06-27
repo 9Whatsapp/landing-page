@@ -343,3 +343,36 @@ h1, h2, h3 {
   opacity: 0;
   transform: translateY(4px);
 }
+
+/* Hide scrollbar for pricing horizontal scroll on mobile */
+.pricing-scroll-container .flex {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pricing-scroll-container .flex::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile touch improvements */
+@media (max-width: 639px) {
+  /* Ensure tap targets are min 44px on mobile for nav and CTA elements */
+  nav a, nav button,
+  footer a,
+  [role="region"] button,
+  .pricing-scroll-container a {
+    min-height: 44px;
+  }
+
+  /* Prevent horizontal overflow on mobile */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Safe area inset support for notched devices */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}

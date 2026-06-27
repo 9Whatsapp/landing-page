@@ -11,7 +11,7 @@
       </div>
 
       <div class="relative mt-14">
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+        <div class="grid gap-5 sm:gap-6 grid-cols-2 lg:grid-cols-4 lg:gap-0">
           <div
             v-for="(step, index) in steps"
             :key="step.title"

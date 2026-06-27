@@ -18,7 +18,7 @@ export default defineNuxtConfig({
       title: 'WhatsApp API Tanpa Nomor Sendiri & QR Scan | 9WhatsApp',
       meta: [
         { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
         { name: 'description', content: 'Kirim OTP, notifikasi, invoice, dan pesan WhatsApp otomatis lewat API tanpa nomor sendiri dan tanpa QR scan. Cocok untuk developer, SaaS, agency, dan UMKM.' },
         { name: 'author', content: '9WhatsApp' },
         { name: 'theme-color', content: '#25D366' },
@@ -41,10 +41,26 @@ export default defineNuxtConfig({
         { rel: 'canonical', href: 'https://9whatsapp.web.id/' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap' },
+        {
+          rel: 'preload',
+          as: 'style',
+          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap',
+          onload: "this.onload=null;this.rel='stylesheet'",
+        },
         { rel: 'icon', href: '/favicon.ico' },
         { rel: 'icon', type: 'image/png', href: '/favicon.png' },
         { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+      ],
+      noscript: [
+        {
+          innerHTML: `<style>
+            .scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+            .hero-code-line { opacity: 1 !important; transform: none !important; }
+            .hero-delivery-dot, .hero-delivery-text, .hero-delivery-time { opacity: 1 !important; }
+            .hero-typing-cursor { display: none !important; }
+            .opacity-0 { opacity: 1 !important; }
+          </style>`,
+        },
       ],
       script: [
         {
