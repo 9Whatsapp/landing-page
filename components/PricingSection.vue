@@ -4,7 +4,7 @@
       <div ref="headerEl" class="scroll-reveal text-center">
         <div class="mb-4 inline-flex items-center gap-1.5 rounded-full border border-whatsapp/15 bg-whatsapp/[0.06] px-3 py-1">
           <svg class="h-3 w-3 text-whatsapp" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" /></svg>
-          <span class="text-[11px] font-medium text-whatsapp/80">Promo paket Timur - diskon 30% bulan pertama</span>
+          <span class="text-[11px] font-medium text-whatsapp/80">Promo paket Timur - diskon 30% pembelian pertama</span>
         </div>
         <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
           Harga Sesuai Kebutuhan
@@ -255,7 +255,7 @@ const plans = [
     hasPromo: true,
     perMessage: 'Rp167',
     creditsDetail: '210 Kredit',
-    note: 'Bulan berikutnya Rp50.000 (Rp238/pesan)'
+    note: 'Pembelian berikutnya Rp50.000 (Rp238/pesan)'
   },
   { 
     label: 'Selatan', 
