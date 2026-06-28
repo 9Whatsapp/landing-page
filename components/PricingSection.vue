@@ -262,39 +262,39 @@ const plans = [
     original: 'Rp99.000', 
     promo: '', 
     price: 'Rp99.000',
-    total: '500', 
-    bonus: '100', 
+    total: '470', 
+    bonus: '70', 
     duration: '90 Hari', 
     popular: true, 
     hasPromo: false,
-    perMessage: 'Rp198',
-    creditsDetail: '400 + 100 Kredit Bonus'
+    perMessage: 'Rp210',
+    creditsDetail: '400 + 70 Kredit Bonus'
   },
   { 
     label: 'Utara', 
     original: 'Rp199.000', 
     promo: '', 
     price: 'Rp199.000',
-    total: '1.150', 
-    bonus: '200', 
+    total: '1.030', 
+    bonus: '80', 
     duration: '180 Hari', 
     popular: false, 
     hasPromo: false,
-    perMessage: 'Rp173',
-    creditsDetail: '950 + 200 Kredit Bonus'
+    perMessage: 'Rp193',
+    creditsDetail: '950 + 80 Kredit Bonus'
   },
   { 
     label: 'Barat', 
     original: 'Rp499.000', 
     promo: '', 
     price: 'Rp499.000',
-    total: '3.000', 
-    bonus: '450', 
+    total: '2.630', 
+    bonus: '80', 
     duration: '365 Hari', 
     popular: false, 
     hasPromo: false,
-    perMessage: 'Rp166',
-    creditsDetail: '2.550 + 450 Kredit Bonus'
+    perMessage: 'Rp190',
+    creditsDetail: '2.550 + 80 Kredit Bonus'
   },
 ]
 </script>
