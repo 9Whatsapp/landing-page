@@ -3,7 +3,11 @@
     <div class="mx-auto max-w-5xl px-4 sm:px-8">
       <div ref="headerEl" class="scroll-reveal text-center">
         <div class="mb-4 inline-flex items-center gap-1.5 rounded-full border border-whatsapp/15 bg-whatsapp/[0.06] px-3 py-1">
-          <svg class="h-3 w-3 text-whatsapp" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" /></svg>
+          <svg class="h-3 w-3 text-whatsapp" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+          </svg>
           <span class="text-[11px] font-medium text-whatsapp/80">Promo paket Timur - diskon 30% pembelian pertama</span>
         </div>
         <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
@@ -18,19 +22,22 @@
       <div ref="tableEl" class="scroll-reveal mt-12" data-delay="200">
         <!-- Mobile horizontal scroll wrapper -->
         <div class="pricing-scroll-container -mx-4 px-4 sm:mx-0 sm:px-0">
-          <div ref="scrollEl" class="flex gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory pt-5 pb-4 sm:pt-0 sm:pb-0 scroll-smooth">
-            <div
-              v-for="plan in plans"
-              :key="plan.label"
+          <div ref="scrollEl"
+            class="flex gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory pt-5 pb-4 sm:pt-0 sm:pb-0 scroll-smooth">
+            <div v-for="plan in plans" :key="plan.label"
               class="group relative flex flex-col justify-between rounded-2xl border p-5 sm:p-6 transition-all duration-300 min-w-[280px] sm:min-w-0 snap-center shrink-0 sm:shrink"
-              :class="plan.popular 
-                ? 'border-whatsapp/35 bg-[#0c1411]/90 shadow-[0_0_40px_rgba(37,211,102,0.03)]' 
-                : 'border-white/[0.08] bg-[#090e0c]/95 hover:border-whatsapp/20 hover:bg-[#0c1411]/95'"
-            >
+              :class="plan.popular
+                ? 'border-whatsapp/35 bg-[#0c1411]/90 shadow-[0_0_40px_rgba(37,211,102,0.03)]'
+                : 'border-white/[0.08] bg-[#090e0c]/95 hover:border-whatsapp/20 hover:bg-[#0c1411]/95'">
               <!-- Popular Badge -->
               <div v-if="plan.popular" class="absolute -top-3 left-1/2 -translate-x-1/2">
                 <span class="rounded-full bg-whatsapp px-3 py-0.5 text-[9px] font-bold uppercase tracking-wider text-gray-950">
                   Terpopuler
+                </span>
+              </div>
+              <div v-else-if="plan.badge" class="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span class="rounded-full border border-white/[0.12] bg-[#090e0c] px-3 py-0.5 text-[9px] font-bold uppercase tracking-wider text-gray-300 whitespace-nowrap">
+                  {{ plan.badge }}
                 </span>
               </div>
 
@@ -40,10 +47,7 @@
                   <span class="text-sm font-semibold tracking-wide text-gray-300 group-hover:text-white transition-colors duration-300">
                     {{ plan.label }}
                   </span>
-                  <span
-                    v-if="plan.hasPromo"
-                    class="rounded bg-whatsapp/[0.08] px-1.5 py-0.5 text-[10px] font-bold text-whatsapp"
-                  >
+                  <span v-if="plan.hasPromo" class="rounded bg-whatsapp/[0.08] px-1.5 py-0.5 text-[10px] font-bold text-whatsapp">
                     -30%
                   </span>
                 </div>
@@ -71,7 +75,9 @@
                   <!-- Total Credits -->
                   <div class="flex items-start gap-2.5">
                     <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-whatsapp/5 text-whatsapp border border-whatsapp/15">
-                      <svg class="h-2.5 w-2.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                      <svg class="h-2.5 w-2.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
                     </div>
                     <div class="flex flex-col">
                       <span class="text-xs font-semibold text-gray-200">{{ plan.total }} Total Kredit</span>
@@ -82,7 +88,9 @@
                   <!-- Active Duration -->
                   <div class="flex items-start gap-2.5">
                     <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-whatsapp/5 text-whatsapp border border-whatsapp/15">
-                      <svg class="h-2.5 w-2.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                      <svg class="h-2.5 w-2.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
                     </div>
                     <div class="flex flex-col">
                       <span class="text-xs font-semibold text-gray-200">Masa Aktif Akun</span>
@@ -93,14 +101,18 @@
                   <!-- Benefits -->
                   <div class="flex items-start gap-2.5">
                     <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-whatsapp/5 text-whatsapp border border-whatsapp/15">
-                      <svg class="h-2.5 w-2.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                      <svg class="h-2.5 w-2.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
                     </div>
                     <span class="text-[11px] text-gray-300">Kredit Tidak Hangus</span>
                   </div>
 
                   <div class="flex items-start gap-2.5">
                     <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-whatsapp/5 text-whatsapp border border-whatsapp/15">
-                      <svg class="h-2.5 w-2.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                      <svg class="h-2.5 w-2.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
                     </div>
                     <span class="text-[11px] text-gray-300">Nomor Siap Pakai</span>
                   </div>
@@ -109,13 +121,9 @@
 
               <!-- Card Button CTA -->
               <div class="mt-8">
-                <a
-                  href="/login"
-                  class="block w-full rounded-xl py-3 sm:py-2.5 text-center text-xs font-bold transition-all duration-300 active:scale-[0.98]"
-                  :class="plan.popular
-                    ? 'bg-whatsapp hover:bg-whatsapp-dark text-gray-950 hover:shadow-[0_2px_15px_rgba(37,211,102,0.25)]'
-                    : 'border border-white/[0.08] hover:border-whatsapp/30 hover:bg-whatsapp/5 text-gray-300 hover:text-white'"
-                >
+                <a href="/login" class="block w-full rounded-xl py-3 sm:py-2.5 text-center text-xs font-bold transition-all duration-300 active:scale-[0.98]" :class="plan.popular
+                  ? 'bg-whatsapp hover:bg-whatsapp-dark text-gray-950 hover:shadow-[0_2px_15px_rgba(37,211,102,0.25)]'
+                  : 'border border-white/[0.08] hover:border-whatsapp/30 hover:bg-whatsapp/5 text-gray-300 hover:text-white'">
                   Pilih Paket
                 </a>
               </div>
@@ -125,22 +133,21 @@
 
         <!-- Mobile scroll indicator dots -->
         <div class="flex justify-center gap-1.5 mt-4 sm:hidden">
-          <span
-            v-for="(plan, index) in plans"
-            :key="'dot-' + plan.label"
-            class="h-1.5 rounded-full transition-all duration-300"
-            :class="activeDot === index ? 'w-4 bg-whatsapp/60' : 'w-1.5 bg-white/[0.12]'"
-          />
+          <span v-for="(plan, index) in plans" :key="'dot-' + plan.label" class="h-1.5 rounded-full transition-all duration-300"
+            :class="activeDot === index ? 'w-4 bg-whatsapp/60' : 'w-1.5 bg-white/[0.12]'" />
         </div>
       </div>
 
       <!-- Enterprise Banner -->
-      <div class="mt-6 rounded-2xl border border-white/[0.08] bg-[#090e0c]/95 p-5 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 hover:border-whatsapp/20 transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.15)]">
+      <div
+        class="mt-6 rounded-2xl border border-white/[0.08] bg-[#090e0c]/95 p-5 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 hover:border-whatsapp/20 transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.15)]">
         <div class="text-center md:text-left">
           <h3 class="text-sm font-semibold text-white">Butuh kapasitas pengiriman lebih besar?</h3>
-          <p class="mt-1.5 text-xs text-gray-400 leading-relaxed max-w-xl">Hubungi kami untuk paket Enterprise dengan kustomisasi kuota volume tinggi, kustomisasi nomor pengirim (sender ID), dan jaminan keandalan SLA.</p>
+          <p class="mt-1.5 text-xs text-gray-400 leading-relaxed max-w-xl">Hubungi kami untuk paket Enterprise dengan kustomisasi kuota volume tinggi, kustomisasi nomor pengirim
+            (sender ID), dan jaminan keandalan SLA.</p>
         </div>
-        <a href="https://wa.me/..." target="_blank" class="shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.02] hover:border-whatsapp/30 hover:bg-whatsapp/5 px-5 py-3 sm:py-2 text-xs font-semibold text-white transition-all duration-300 active:scale-[0.98]">
+        <a href="https://wa.me/..." target="_blank"
+          class="shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.02] hover:border-whatsapp/30 hover:bg-whatsapp/5 px-5 py-3 sm:py-2 text-xs font-semibold text-white transition-all duration-300 active:scale-[0.98]">
           Hubungi Sales
         </a>
       </div>
@@ -153,24 +160,34 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 rounded-2xl border border-white/[0.06] bg-[#090e0c]/90 p-5 sm:p-6">
           <div class="flex flex-col items-center text-center p-3 sm:p-4">
             <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-whatsapp/15 bg-whatsapp/5 text-whatsapp">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
             </div>
             <h4 class="text-xs font-bold text-white uppercase tracking-wide">1 Kredit = 1 Pesan</h4>
             <p class="mt-2 text-[11px] leading-relaxed text-gray-400">Saldo kredit hanya terpotong jika pesan WhatsApp sukses terkirim lewat endpoint API.</p>
           </div>
           <div class="flex flex-col items-center text-center p-3 sm:p-4 border-y border-white/[0.06] md:border-y-0 md:border-x border-white/[0.06]">
             <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-whatsapp/15 bg-whatsapp/5 text-whatsapp">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg>
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+              </svg>
             </div>
             <h4 class="text-xs font-bold text-white uppercase tracking-wide">Kredit Tidak Hangus</h4>
             <p class="mt-2 text-[11px] leading-relaxed text-gray-400">Sisa saldo kredit Anda tetap aman dan tidak akan pernah kedaluwarsa meskipun masa aktif akun habis.</p>
           </div>
           <div class="flex flex-col items-center text-center p-3 sm:p-4">
             <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-whatsapp/15 bg-whatsapp/5 text-whatsapp">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.656 48.656 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7C4.68 9.547 4.634 10.768 4.634 12c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.092-1.209.138-2.312.138-3.662z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 10.5l3 3 3-3" /></svg>
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.656 48.656 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7C4.68 9.547 4.634 10.768 4.634 12c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.092-1.209.138-2.312.138-3.662z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 10.5l3 3 3-3" />
+              </svg>
             </div>
             <h4 class="text-xs font-bold text-white uppercase tracking-wide">Masa Aktif Fleksibel</h4>
-            <p class="mt-2 text-[11px] leading-relaxed text-gray-400">Masa aktif akun membatasi akses pengiriman. Cukup topup paket apa saja untuk memperpanjang masa aktif akun.</p>
+            <p class="mt-2 text-[11px] leading-relaxed text-gray-400">Masa aktif akun membatasi akses pengiriman. Cukup topup paket apa saja untuk memperpanjang masa aktif akun.
+            </p>
           </div>
         </div>
       </div>
@@ -243,58 +260,60 @@ function updateActiveDot() {
 }
 
 const plans = [
-  { 
-    label: 'Timur', 
-    original: 'Rp50.000', 
-    promo: 'Rp35.000', 
+  {
+    label: 'Timur',
+    original: 'Rp50.000',
+    promo: 'Rp35.000',
     price: 'Rp35.000',
-    total: '210', 
-    bonus: '0', 
-    duration: '30 Hari', 
-    popular: false, 
+    total: '190',
+    bonus: '0',
+    duration: '30 Hari',
+    popular: false,
     hasPromo: true,
-    perMessage: 'Rp167',
-    creditsDetail: '210 Kredit',
-    note: 'Pembelian berikutnya Rp50.000 (Rp238/pesan)'
+    perMessage: 'Rp184',
+    creditsDetail: '190 Kredit',
+    note: 'Pembelian berikutnya Rp50.000 (Rp263/pesan)'
   },
-  { 
-    label: 'Selatan', 
-    original: 'Rp99.000', 
-    promo: '', 
+  {
+    label: 'Selatan',
+    original: 'Rp99.000',
+    promo: '',
     price: 'Rp99.000',
-    total: '470', 
-    bonus: '70', 
-    duration: '90 Hari', 
-    popular: true, 
+    total: '420',
+    bonus: '70',
+    duration: '60 Hari',
+    popular: true,
     hasPromo: false,
-    perMessage: 'Rp210',
-    creditsDetail: '400 + 70 Kredit Bonus'
+    perMessage: 'Rp236',
+    creditsDetail: '350 + 70 Kredit Bonus'
   },
-  { 
-    label: 'Utara', 
-    original: 'Rp199.000', 
-    promo: '', 
+  {
+    label: 'Utara',
+    original: 'Rp199.000',
+    promo: '',
     price: 'Rp199.000',
-    total: '1.030', 
-    bonus: '80', 
-    duration: '180 Hari', 
-    popular: false, 
+    total: '950',
+    bonus: '100',
+    duration: '90 Hari',
+    popular: false,
     hasPromo: false,
-    perMessage: 'Rp193',
-    creditsDetail: '950 + 80 Kredit Bonus'
+    perMessage: 'Rp209',
+    creditsDetail: '850 + 100 Kredit Bonus',
+    badge: 'Rekomendasi'
   },
-  { 
-    label: 'Barat', 
-    original: 'Rp499.000', 
-    promo: '', 
+  {
+    label: 'Barat',
+    original: 'Rp499.000',
+    promo: '',
     price: 'Rp499.000',
-    total: '2.630', 
-    bonus: '80', 
-    duration: '365 Hari', 
-    popular: false, 
+    total: '2.600',
+    bonus: '200',
+    duration: '180 Hari',
+    popular: false,
     hasPromo: false,
-    perMessage: 'Rp190',
-    creditsDetail: '2.550 + 80 Kredit Bonus'
+    perMessage: 'Rp192',
+    creditsDetail: '2.400 + 200 Kredit Bonus',
+    badge: 'Paling Hemat'
   },
 ]
 </script>
