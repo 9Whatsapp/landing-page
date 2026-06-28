@@ -67,9 +67,9 @@ function registerStat(el: HTMLElement | null, index: number) {
 }
 
 // Real-time counter logic
-const baseCount = ref(48291)
+const baseCount = ref(4291)
 const stats = ref([
-  { id: 'sent', label: 'Pesan Terkirim', value: '48.291', detail: '24 jam terakhir (real-time)', hasDot: true },
+  { id: 'sent', label: 'Pesan Terkirim', value: '4.291', detail: '24 jam terakhir (real-time)', hasDot: true },
   { id: 'success', label: 'Tingkat Keberhasilan', value: '99.98%', detail: 'Berdasarkan log API gateway', icon: 'check' },
   { id: 'speed', label: 'Rata-rata Delivery', value: '< 1.8s', detail: 'Kecepatan terima di handset', icon: 'speed' },
   { id: 'uptime', label: 'API Server Uptime', value: '100%', detail: 'SLA 30 hari terakhir', statusText: 'ONLINE' },
